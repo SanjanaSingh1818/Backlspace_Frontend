@@ -36,7 +36,7 @@ export default function AddWorkspace() {
 
     try {
       const response = await axios.post(
-        "https://backspace-fullstack.onrender.com/api/workspaces",
+        "",
         formData,
         {
           headers: { "Content-Type": "application/json" },
