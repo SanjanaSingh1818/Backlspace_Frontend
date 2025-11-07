@@ -26,7 +26,7 @@ export default function WorkspacesPage() {
 
   const fetchWorkspaces = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/workspaces");
+      const res = await axios.get("https://backspace-fullstack.onrender.com/api/workspaces");
       const data = Array.isArray(res.data) ? res.data : res.data.workspaces || [];
       setWorkspaces(data);
       setFiltered(data);

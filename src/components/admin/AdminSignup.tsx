@@ -46,7 +46,7 @@ export default function AdminSignup() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/api/admin/register", {
+      const res = await axios.post("https://backspace-fullstack.onrender.com/api/admin/register", {
         email,
         password,
         secretKey,

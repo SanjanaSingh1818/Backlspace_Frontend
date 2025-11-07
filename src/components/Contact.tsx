@@ -22,7 +22,7 @@ export default function Contact() {
     setSuccess(false);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/contact', formData);
+      const res = await axios.post('https://backspace-fullstack.onrender.com/api/contact', formData);
       if (res.status === 201 || res.status === 200) {
         setSuccess(true);
         setFormData({

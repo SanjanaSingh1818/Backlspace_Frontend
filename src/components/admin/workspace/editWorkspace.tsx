@@ -27,7 +27,7 @@ export default function EditWorkspace() {
   useEffect(() => {
     const fetchWorkspace = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/workspaces/${id}`);
+        const res = await axios.get(`https://backspace-fullstack.onrender.com/api/workspaces/${id}`);
         setFormData(res.data);
       } catch (error) {
         console.error("❌ Error fetching workspace:", error);
@@ -53,7 +53,7 @@ export default function EditWorkspace() {
 
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/workspaces/${id}`,
+        `https://backspace-fullstack.onrender.com/api/workspaces/${id}`,
         formData,
         {
           headers: {

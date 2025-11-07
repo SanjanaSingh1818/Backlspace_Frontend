@@ -44,7 +44,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
 
   async function fetchWorkspaces() {
     try {
-      const res = await axios.get("http://localhost:5000/api/workspaces");
+      const res = await axios.get("https://backspace-fullstack.onrender.com/api/workspaces");
       setWorkspaces(res.data);
     } catch (error) {
       console.error("Error fetching workspaces:", error);
@@ -53,7 +53,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
 
   async function fetchContacts() {
     try {
-      const res = await axios.get("http://localhost:5000/api/contact"); // ✅ Corrected endpoint
+      const res = await axios.get("https://backspace-fullstack.onrender.com/api/contact"); // ✅ Corrected endpoint
       setContacts(res.data);
     } catch (error) {
       console.error("Error fetching contacts:", error);
@@ -65,7 +65,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
 
     try {
       const token = localStorage.getItem("adminToken");
-      const res = await axios.delete(`http://localhost:5000/api/workspaces/${id}`, {
+      const res = await axios.delete(`https://backspace-fullstack.onrender.com/api/workspaces/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -87,7 +87,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
     if (!workspace._id) return;
     setLoading(true);
     try {
-      await axios.put(`http://localhost:5000/api/workspaces/${workspace._id}`, workspace);
+      await axios.put(`https://backspace-fullstack.onrender.com/api/workspaces/${workspace._id}`, workspace);
       setEditingWorkspace(null);
       fetchWorkspaces();
     } catch (error) {
@@ -264,7 +264,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
             const newStatus = e.target.value;
             try {
               const res = await axios.put(
-                `http://localhost:5000/api/contact/${contact._id}`,
+                `https://backspace-fullstack.onrender.com/api/contact/${contact._id}`,
                 { status: newStatus, remark: contact.remark || "" } // ✅ Send both
               );
               if (res.data.success) {
@@ -312,7 +312,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
             const newRemark = e.target.value;
             try {
               const res = await axios.put(
-                `http://localhost:5000/api/contact/${contact._id}`,
+                `https://backspace-fullstack.onrender.com/api/contact/${contact._id}`,
                 { status: contact.status, remark: newRemark } // ✅ Send both
               );
               if (!res.data.success) {
