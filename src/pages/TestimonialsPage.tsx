@@ -1,0 +1,15 @@
+import Navbar from '../components/Navbar';
+import Testimonials from '../components/Testimonials';
+
+
+export default function TestimonialsPage() {
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+      <div className="pt-20">
+        <Testimonials />
+      </div>
+
+    </div>
+  );
+}
