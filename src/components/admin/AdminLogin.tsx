@@ -32,7 +32,7 @@ export default function AdminLogin() {
     setError("");
 
     try {
-      const res = await axios.post("https://backspace-fullstack.onrender.com/api/admin/login", {
+      const res = await axios.post("http://localhost:5000/api/admin/login", {
         email,
         password,
       });
