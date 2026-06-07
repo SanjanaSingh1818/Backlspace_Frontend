@@ -5,7 +5,7 @@ import { Target, Users, Lightbulb, Award } from "lucide-react";
 const features = [
   {
     icon: Target,
-    title: "Our Mission",
+    title: "Our Missions",
     description:
       "To provide exceptional workspaces that inspire productivity and foster collaboration among professionals.",
   },
